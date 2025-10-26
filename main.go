@@ -30,8 +30,8 @@ func main() {
     // Setup routes
     setupRoutes(app)
 
-    log.Println("🚀 Server running on port 3000")
-    log.Println("📊 Database setup completed")
+    log.Println("Server running on port 3000")
+    log.Println("Database setup completed")
     app.Listen(":3000")
 }
 
@@ -51,13 +51,13 @@ func setupDatabase() {
     )
     
     if err != nil {
-        log.Fatal("❌ Migration failed:", err)
+        log.Fatal("Migration failed:", err)
     }
 
     // Enable foreign key checks kembali
     config.DB.Exec("SET FOREIGN_KEY_CHECKS=1")
     
-    log.Println("✅ Database tables created successfully")
+    log.Println("Database tables created successfully")
 }
 
 func setupRoutes(app *fiber.App) {
